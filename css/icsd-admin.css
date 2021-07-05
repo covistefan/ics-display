@@ -1,0 +1,141 @@
+.cv-pro-badge {
+    font-size: 12px;
+    background: orange;
+    border-radius: 3px;
+    padding: 1px 3px;
+    color: #fff;
+}
+
+.cv-pro-badge.badge-grey {
+    background: #888888;
+}
+
+.icsd-admin-table tr.warning {
+    background: #f4dbdb;
+}
+
+/* TABLIST */
+
+ul.tablist {
+/*
+    display: flex;
+    flex-flow: row;
+*/
+    width: 95%;
+}
+
+ul.tablist li {
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    padding: 10px 15px;
+}
+
+ul.tablist li a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul.tablist li:hover {
+    background: #fff;
+}
+
+ul.tablist li.active {
+    background: #aaa;
+    color: #fff;
+}
+
+ul.tablist li.active a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul.tablist li.pro-tab, ul.tablist li.help-tab {
+    float: right;
+    border: none;
+    background: transparent !important;
+}
+
+ul.tablist li.help-tab .cv-pro-badge { font-size: inherit; }
+ul.tablist li.pro-tab .cv-pro-badge { font-size: inherit; }
+
+ul.tablist li.closetabs {
+    background: transparent;
+    flex-basis: 100%;
+    padding: 0px;
+}
+
+@media screen and (max-width: 480px) {
+    
+    ul.tablist {
+        max-width: 98%;
+    }
+    
+    ul.tablist li {
+        float: none;
+        clear: both;
+        padding: 10px 15px;
+        margin-bottom: 0px;
+    }
+    
+}
+
+ul.icsd-header-list {}
+
+ul.icsd-header-list::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+ul.icsd-header-list li.icsd-header-item {
+    float: left;
+    margin-right: 5px;
+    padding: 4px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    background: #aaa;
+}
+
+ul.icsd-header-list li.icsd-header-item-placeholder {
+    background: #eee;
+    border-color: #ddd;
+}
+
+ul.icsd-header-list li.icsd-header-item span.handle {
+    line-height: 2.1em;
+    font-size: inherit;
+}
+
+.inline.notice {
+    margin: 1em 3em 1em 0;
+}
+
+.editor-styles-wrapper .wp-block-icsd-block {
+    background: #fff;
+}
+
+.editor-styles-wrapper .wp-block-icsd-block .components-placeholder { min-height: 1px; }
+
+.editor-styles-wrapper .wp-block-icsd-block p.dashicons-before::before {
+    margin-right: 10px;
+}
+
+.editor-styles-wrapper .wp-block-icsd-block p { 
+    margin: 0;
+    font-size: 13px;
+}
+
+.editor-styles-wrapper .wp-block-icsd-block code {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    background: #eeeeee;
+    padding: 3px;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.icsd-block-post-editor {
+    margin: 1em;
+}

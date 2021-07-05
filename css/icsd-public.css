@@ -1,0 +1,22 @@
+ul.icsd-pager {
+    padding-left: 0;
+    list-style: none;
+}
+
+li.icsd-pager-item {
+    display: inline-block;
+    border: 1px solid black;
+    margin-right: 0.25em;
+    margin-bottom: 0.25em;
+    padding: 0.1rem;
+    min-width: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+li.icsd-pager-item.active {
+    background: black;
+}
+
+table.icsd-cal-table td.false-month { opacity: 0.2; }
+table.icsd-cal-table td.active-date { background: #969CB3; color: #ffffff; }

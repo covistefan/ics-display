@@ -1,0 +1,409 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ICS Display\n"
+"POT-Creation-Date: 2021-03-13 14:48+0100\n"
+"PO-Revision-Date: 2021-03-13 15:32+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ics-display.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/plugin-action.php:12
+msgid "Thank you for activating premium features"
+msgstr "Vielen Dank für die Aktivierung der Premium-Funktionen"
+
+#: admin/plugin-action.php:76 admin/plugin-action.php:83
+#: admin/plugin-help.php:6 library/class-ics-display-public.php:74
+msgid "date"
+msgstr "Datum"
+
+#: admin/plugin-action.php:77 admin/plugin-action.php:84
+#: admin/plugin-help.php:7 library/class-ics-display-public.php:74
+msgid "time"
+msgstr "Zeit"
+
+#: admin/plugin-action.php:78 admin/plugin-action.php:85
+#: library/class-ics-display-public.php:74
+msgid "event"
+msgstr "Veranstaltung"
+
+#: admin/plugin-action.php:79 admin/plugin-action.php:86
+#: library/class-ics-display-public.php:74
+msgid "location"
+msgstr "Ort"
+
+#: admin/plugin-action.php:87 admin/plugin-help.php:8
+msgid "dtbegin"
+msgstr "Beginn"
+
+#: admin/plugin-action.php:88 admin/plugin-help.php:9
+msgid "dtend"
+msgstr "Ende"
+
+#: admin/plugin-action.php:89 admin/plugin-help.php:10
+msgid "dtstamp"
+msgstr "Dauer"
+
+#: admin/plugin-action.php:90
+msgid "description"
+msgstr "Beschreibung"
+
+#: admin/plugin-action.php:91
+msgid "summary"
+msgstr "Zusammenfassung"
+
+#: admin/plugin-action.php:109
+#, php-format
+msgid "Error reading events from \"%s\""
+msgstr "Fehler beim Lesen der Events von „%s“"
+
+#. Plugin Name of the plugin/theme
+#: admin/plugin-header.php:5 library/class-ics-display-admin.php:52
+msgid "ICS Display"
+msgstr "ICS Display"
+
+#: admin/plugin-header.php:6
+msgid "Manage ICS-Data"
+msgstr "Verwalte hier deine ICS-Daten"
+
+#: admin/plugin-header.php:11
+msgid "URL List"
+msgstr "URL-Liste"
+
+#: admin/plugin-header.php:17
+msgid "PRO"
+msgstr "PRO"
+
+#: admin/plugin-header.php:18
+msgid "Help"
+msgstr "Hilfe"
+
+#: admin/plugin-help.php:2
+msgid "ICSD Help"
+msgstr "ICSD Hilfe"
+
+#: admin/plugin-help.php:3
+msgid ""
+"To embed the ICS-data you can simply configurate the ICS-item, copy the "
+"shortcode and add it to your page or use it with the block editor."
+msgstr ""
+"Um die ICS-Daten auf deiner Seite einzubetten, konfiguriere einfach das "
+"Element, kopiere den WP-Shortcode und füge ihn auf deiner Seite ein oder "
+"benutze einfach den Block-Editor."
+
+#: admin/plugin-help.php:4
+msgid "Field data handling"
+msgstr "Daten der verschiedenen Feldtypen"
+
+#: admin/plugin-help.php:6
+msgid ""
+"This field will show up the date formatted by your wordpress date options."
+msgstr ""
+"Dieses Feld gibt das Datum so aus, wie du es in Wordpress definiert hast."
+
+#: admin/plugin-help.php:6 admin/plugin-help.php:7
+msgid "Can be a range."
+msgstr "Kann einen Zeitraum abbilden."
+
+#: admin/plugin-help.php:7
+msgid ""
+"This field will show up the time formatted by your wordpress time options."
+msgstr ""
+"Dieses Feld gibt die Zeit so aus, wie du es in Wordpress definiert hast."
+
+#: admin/plugin-help.php:8 admin/plugin-help.php:9
+msgid ""
+"This field will show up the date and time formatted by your wordpress date "
+"and time options."
+msgstr ""
+"Dieses Feld gibt das Datum und die Uhrzeit so aus, wie du es in Wordpress "
+"definiert hast."
+
+#: admin/plugin-help.php:10
+msgid ""
+"This field will show up the time in hours and minutes your event will last."
+msgstr "Dieses Feld zeigt die Dauer eines Events an."
+
+#: admin/plugin-help.php:12
+msgid "ICSD advanced shortcodes"
+msgstr "ICSD erweiterte WP-Shortcodes"
+
+#: admin/plugin-help.php:13
+msgid ""
+"If you want to combine multiple ICS-datasets, you can manage the style "
+"within the configuration in shortcode-tag."
+msgstr ""
+"Wenn du verschiedene ICS-Quellen kombinieren willst, kannst du über die "
+"Einstellungen beim WP-Shortcode die Ansicht definieren."
+
+#: admin/plugin-help.php:14
+msgid "Following options are avaiable:"
+msgstr "Die folgenden Optionen sind verfügbar:"
+
+#: admin/plugin-help.php:15
+msgid "id=\"id1,id2,idx\""
+msgstr "id=„id1,id2,idx“"
+
+#: admin/plugin-help.php:16
+msgid "display=\"table|list|calendar\""
+msgstr "display=„table|list|calendar“"
+
+#: admin/plugin-help.php:17
+msgid "List and calendar view are only supported in PRO."
+msgstr ""
+"Listen- und Kalenderdarstellung werden nur von der PRO-Version unterstützt."
+
+#: admin/plugin-help.php:19
+msgid "page=\"int\""
+msgstr "page=„int“"
+
+#: admin/plugin-help.php:20
+msgid "Next attributes are only used with display \"table\" or \"list\"."
+msgstr ""
+"Die folgenden Attribute sind nur mit display „table“ oder „list“ "
+"kombinierbar."
+
+#: admin/plugin-help.php:21
+msgid "sort=\"asc|desc\""
+msgstr "sort=„asc|desc“"
+
+#: admin/plugin-help.php:22
+msgid "dataset=\"elem1,elem2,elemx\""
+msgstr "dataset=„elem1,elem2,elemx“"
+
+#: admin/plugin-help.php:23
+msgid "header=\"name1,name2,namex\""
+msgstr "header=„name1,name2,namex“"
+
+#: admin/plugin-premium.php:4
+msgid "Activate PRO"
+msgstr "PRO aktivieren"
+
+#: admin/plugin-premium.php:5
+msgid "Enter PRO version code"
+msgstr "PRO-Code eingeben"
+
+#: admin/plugin-premium.php:7
+msgid "Submit"
+msgstr "Absenden"
+
+#: admin/plugin-premium.php:9
+msgid "Buy PRO version."
+msgstr "Kaufe die PRO Version."
+
+#: admin/plugin-premium.php:19
+msgid "PRO Information"
+msgstr "PRO Informationen"
+
+#: admin/plugin-premium.php:20
+#, php-format
+msgid "Your PRO version will end on %s."
+msgstr "Deine PRO-Version wird am %s ablaufen."
+
+#: admin/plugin-settings.php:7 admin/plugin-settings.php:141
+msgid "Remove"
+msgstr "Entfernen"
+
+#: admin/plugin-settings.php:35
+msgid "Shortcode"
+msgstr "WP-Shortcode"
+
+#: admin/plugin-settings.php:36
+msgid "ICS Name"
+msgstr "ICS-Name"
+
+#: admin/plugin-settings.php:38
+msgid "ICS URL"
+msgstr "ICS-URL"
+
+#: admin/plugin-settings.php:55
+msgid "Add URL"
+msgstr "URL hinzufügen"
+
+#: admin/plugin-settings.php:56
+msgid ""
+"Add a new URL to an ICS-File. You can change the properties after adding the "
+"URL."
+msgstr ""
+"Füge eine neue URL zu einer ICS-Datei hinzu. Du kannst nach dem Hinzufügen "
+"die Darstellung und andere Eigenschaften ändern."
+
+#: admin/plugin-settings.php:58
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: admin/plugin-settings.php:85
+msgid "Name"
+msgstr "Name"
+
+#: admin/plugin-settings.php:87
+msgid "Content display type"
+msgstr "Darstellung"
+
+#: admin/plugin-settings.php:89
+msgid "Table view"
+msgstr "Tabellenansicht"
+
+#: admin/plugin-settings.php:90
+msgid "List view"
+msgstr "Listenansicht"
+
+#: admin/plugin-settings.php:91
+msgid "Calendar view"
+msgstr "Kalenderansicht"
+
+#: admin/plugin-settings.php:94
+msgid "Sorting"
+msgstr "Sortierung"
+
+#: admin/plugin-settings.php:96
+msgid "Sort ascending"
+msgstr "Aufsteigend sortieren"
+
+#: admin/plugin-settings.php:97
+msgid "Sort descending"
+msgstr "Absteigend sortieren"
+
+#: admin/plugin-settings.php:99
+msgid "Use start date <em>(beta)</em>"
+msgstr "Benutze ein Startdatum für die Anzeige <em>(beta)</em>"
+
+#: admin/plugin-settings.php:101
+msgid ""
+"In calendar view the startdate will be the first day of month your start "
+"date is defined for."
+msgstr ""
+"In der Kalenderansicht wird das Startdatum automatisch auf den ersten Tag "
+"des Monats gesetzt, in dem dein Startdatum liegt."
+
+#: admin/plugin-settings.php:102
+msgid ""
+"Use following number of future entries to display (zero shows all, limited "
+"by one year from startdate)"
+msgstr ""
+"Verwende die folgende Anzahl an zukünftigen Einträgen, die angezeigt werden "
+"sollen (0 zeigt alle an, max 1 Jahr ab Startdatum)"
+
+#: admin/plugin-settings.php:104
+msgid ""
+"Use following number of repeating entries to display (zero shows all, only "
+"limited by number of all entries be displayed)"
+msgstr ""
+"Verwende die folgende Anzahl an zukünftigen Einträgen, die angezeigt werden "
+"sollen (0 zeigt alle an, maximal limitiert durch die Gesamtzahl der "
+"Einträge, die gezeigt werden sollen)"
+
+#: admin/plugin-settings.php:106
+msgid "Use following number of entries to display per page (zero shows all)"
+msgstr ""
+"Verwende die folgende Anzahl von Einträgen, die pro Seite angezeigt werden "
+"sollen (0 zeigt alle an)"
+
+#: admin/plugin-settings.php:107
+msgid "Use following number of calendar pages to display (zero shows three)"
+msgstr ""
+"Verwende die folgende Anzahl von Kalenderseiten, die angezeigt werden sollen "
+"(0 zeigt drei)"
+
+#: admin/plugin-settings.php:109
+msgid ""
+"Informations to be shown in table and list view or displayed as tooltip in "
+"calendar view"
+msgstr ""
+"Informationen, die in der Tabellen- und Listenansicht angezeigt werden "
+"sollen bzw. als Tooltip in der Kalenderansicht"
+
+#: admin/plugin-settings.php:140
+msgid ""
+"Sort elements by drag and drop and name the header fields by yourself if you "
+"won't use our prefered names."
+msgstr ""
+"Sortiere Elemente per Drag & Drop und benenne die Felder in der Kopfzeile, "
+"wenn du unsere bevorzugten Namen nicht verwenden willst."
+
+#: admin/plugin-settings.php:141
+msgid "Save"
+msgstr "Speichern"
+
+#: library/class-ics-display-public.php:511
+msgid "There seems to be an undefined RULE in calendar"
+msgstr "Es scheint eine undefinierte Regel in deinem Kalender zu geben"
+
+#: library/class-ics-display-public.php:530
+#, php-format
+msgid "%s day"
+msgid_plural "%s days"
+msgstr[0] "%s Tag"
+msgstr[1] "%s Tage"
+
+#: library/class-ics-display-public.php:534
+#, php-format
+msgid "%s hr."
+msgid_plural "%s hrs."
+msgstr[0] "%s Std."
+msgstr[1] "%s Std."
+
+#: library/class-ics-display-public.php:543
+msgid "hrs."
+msgstr "Std."
+
+#: library/class-ics-display-public.php:993
+#: library/class-ics-display-public.php:1000
+msgid "ICSD PRO License needed"
+msgstr "ICSD PRO Lizenz erforderlich"
+
+#: library/class-ics-display.php:91
+msgid " (PRO version)"
+msgstr " (PRO Version)"
+
+#: js/icsd-block.js:27
+msgid "Select the ICS-Calendar you want to display"
+msgstr "Wähle den Kalender, den du Darstellen willst"
+
+#: js/icsd-block.js:70
+msgid "Choose ICS-Display Source"
+msgstr "Wähle eine Quelle"
+
+#: js/icsd-block.js:96
+msgid "Select a ICS-Display"
+msgstr "Wähle ein ICS-Display"
+
+#: js/icsd-block.js:30
+msgid "calendar"
+msgstr "kalender"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/ics-display/"
+msgstr "https://wordpress.org/plugins/ics-display/"
+
+#. Description of the plugin/theme
+msgid ""
+"Display upcoming events from a shared Google, Outlook, iCal or other ICS "
+"calendar."
+msgstr ""
+"Zeige bevorstehende Ereignisse aus einem freigegebenen Google-, Outlook-, "
+"iCal- oder anderem Kalender an, der das ICS-Format unterstützt."
+
+#. Author of the plugin/theme
+msgid "appleuser"
+msgstr "appleuser"
+
+#. Author URI of the plugin/theme
+msgid "https://profiles.wordpress.org/appleuser"
+msgstr "https://profiles.wordpress.org/appleuser"
+
+#~ msgid "ID"
+#~ msgstr "ID"
