@@ -9,9 +9,9 @@ $plugin_url = ICSD_PLUGIN_URL;
 if (isset($_POST['icsd_premium'])) {
     $res = set_ics_premium(sanitize_text_field(trim($_POST['icsd_premium'])));
     if ($res===true) {
-        echo '<div class="updated notice inline is-dismissable"><p>'.__( 'Thank you for activating premium features', ICSD_TEXT_DOMAIN ).'</p></div>';
+        echo '<div class="updated notice inline is-dismissable"><p>'.esc_html__( 'Thank you for activating premium features', ICSD_TEXT_DOMAIN ).'</p></div>';
     } else {
-        echo '<div class="error notice inline is-dismissable"><p>'.__( $res['msg'], ICSD_TEXT_DOMAIN ).'</p></div>';
+        echo '<div class="error notice inline is-dismissable"><p>'.esc_html__( $res['msg'], ICSD_TEXT_DOMAIN ).'</p></div>';
     }
 }
 $icsd_url = maybe_unserialize(get_option('icsd_url'));
@@ -106,7 +106,7 @@ if (is_array($icsd_setup)) {
                     $icsd_setup[$sk]['checked'] = time();
                 } else {
                     echo '<div class="error notice inline is-dismissable"><p>';
-                    printf(__('Error reading events from "%s"', ICSD_TEXT_DOMAIN ),((isset($sv['name']) && trim($sv['name'])!='')?trim($sv['name']):$icsd_url[$sk]));
+                    printf(esc_html__('Error reading events from "%s"', ICSD_TEXT_DOMAIN ),((isset($sv['name']) && trim($sv['name'])!='')?trim($sv['name']):$icsd_url[$sk]));
                     echo '</p></div>';
                 }
             }

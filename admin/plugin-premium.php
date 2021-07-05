@@ -1,12 +1,12 @@
         <?php if (!(defined('ICSD_PRO')) || (defined('ICSD_PRO') && ICSD_PRO===false)) { ?>
             <div class="tabcontent" id="tabs-premium">
                 <form action="" method="post">
-                    <h2><?php echo __("Activate PRO", ICSD_TEXT_DOMAIN); ?></h2>
-                    <p><?php echo __("Enter PRO version code", ICSD_TEXT_DOMAIN); ?></p>
+                    <h2><?php esc_html_e("Activate PRO", ICSD_TEXT_DOMAIN); ?></h2>
+                    <p><?php esc_html_e("Enter PRO version code", ICSD_TEXT_DOMAIN); ?></p>
                     <p><input type="text" name="icsd_premium" style="width: 50%" /></p>
-                    <p><input type="submit" class="button button-primary" value="<?php echo __("Submit", ICSD_TEXT_DOMAIN); ?>"></p>
+                    <p><input type="submit" class="button button-primary" value="<?php esc_attr_e("Submit", ICSD_TEXT_DOMAIN); ?>"></p>
                 </form>
-                <p><?php echo __("Buy PRO version.", ICSD_TEXT_DOMAIN); ?></p>
+                <p><?php esc_html_e("Buy PRO version.", ICSD_TEXT_DOMAIN); ?></p>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="WH844LQQHAQQG">
@@ -16,7 +16,7 @@
             </div>
         <?php } else { ?>
             <div class="tabcontent" id="tabs-premium">
-                <h2><?php echo __("PRO Information", ICSD_TEXT_DOMAIN); ?></h2>
-                <p><?php printf(__("Your PRO version will end on %s.", ICSD_TEXT_DOMAIN), date_i18n(get_option('date_format'), ICSD_PRO_TIME)); ?></p>
+                <h2><?php esc_html_e("PRO Information", ICSD_TEXT_DOMAIN); ?></h2>
+                <p><?php printf(esc_html__("Your PRO version will end on %s.", ICSD_TEXT_DOMAIN), date_i18n(get_option('date_format'), ICSD_PRO_TIME)); ?></p>
             </div>
         <?php } ?>

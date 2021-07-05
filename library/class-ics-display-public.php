@@ -213,10 +213,6 @@ class ICS_Display_Public {
             $icsdata = explode(PHP_EOL, $content);
             $act = 0;
 
-            // echo '<pre>';
-            // var_export($icsdata);
-            // echo '</pre>';
-
             if (is_array($icsdata)) {
                 foreach($icsdata AS $ik => $iv) {
                     if ($ik>0 && intval(strpos($iv, ":"))==0) {
