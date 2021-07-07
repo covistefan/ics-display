@@ -48,7 +48,7 @@ if (is_admin()) {
                     'value' => $sk
                 );
             }
-            echo json_encode($returnics);
+            echo wp_json_encode($returnics);
             wp_die(); // this is required to terminate immediately and return a proper response
         }
     }

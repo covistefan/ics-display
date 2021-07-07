@@ -73,22 +73,22 @@ $icsd_setup_default = array(
     'repeats' => 3,
     'page' => 10,
     'dataset' => array(
-        'date' => __('date', ICSD_TEXT_DOMAIN),
-        'time' => __('time', ICSD_TEXT_DOMAIN),
-        'event' => __('event', ICSD_TEXT_DOMAIN),
-        'location' => __('location', ICSD_TEXT_DOMAIN)
+        'date' => esc_attr__('date', ICSD_TEXT_DOMAIN),
+        'time' => esc_attr__('time', ICSD_TEXT_DOMAIN),
+        'event' => esc_attr__('event', ICSD_TEXT_DOMAIN),
+        'location' => esc_attr__('location', ICSD_TEXT_DOMAIN)
     )
 );
 $icsd_dataset_default = array(
-    'date' => __('date', ICSD_TEXT_DOMAIN),
-    'time' => __('time', ICSD_TEXT_DOMAIN),
-    'event' => __('event', ICSD_TEXT_DOMAIN),
-    'location' => __('location', ICSD_TEXT_DOMAIN),
-    'dtbegin' => __('dtbegin', ICSD_TEXT_DOMAIN),
-    'dtend' => __('dtend', ICSD_TEXT_DOMAIN),
-    'dtstamp' => __('dtstamp', ICSD_TEXT_DOMAIN),
-    'description' => __('description', ICSD_TEXT_DOMAIN),
-    'summary' => __('summary', ICSD_TEXT_DOMAIN)
+    'date' => esc_attr__('date', ICSD_TEXT_DOMAIN),
+    'time' => esc_attr__('time', ICSD_TEXT_DOMAIN),
+    'event' => esc_attr__('event', ICSD_TEXT_DOMAIN),
+    'location' => esc_attr__('location', ICSD_TEXT_DOMAIN),
+    'dtbegin' => esc_attr__('dtbegin', ICSD_TEXT_DOMAIN),
+    'dtend' => esc_attr__('dtend', ICSD_TEXT_DOMAIN),
+    'dtstamp' => esc_attr__('dtstamp', ICSD_TEXT_DOMAIN),
+    'description' => esc_attr__('description', ICSD_TEXT_DOMAIN),
+    'summary' => esc_attr__('summary', ICSD_TEXT_DOMAIN)
 );
 $icsd_display_icon = array(
     'table' => '<span class="dashicons dashicons-editor-table"></span>',
