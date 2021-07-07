@@ -4,7 +4,7 @@
 <script>
 
     function icsd_remove( url , urlid ) {
-        if (parseInt(urlid)>0 && confirm('<?php echo __("Remove", ICSD_TEXT_DOMAIN); ?> ”' + url + '”?')) {
+        if (parseInt(urlid)>0 && confirm('<?php esc_js_e("Remove", ICSD_TEXT_DOMAIN); ?> ”' + url + '”?')) {
             jQuery('#icsd_url_remove').val(urlid);
             jQuery('#icsd_remove').submit();
         }
@@ -32,30 +32,30 @@
         <table class="wp-list-table widefat icsd-admin-table" style="width: 95%;">
             <thead>
                 <tr>
-                    <th><?php echo __("Shortcode", ICSD_TEXT_DOMAIN); ?></th>
-                    <th><?php echo __("ICS Name", ICSD_TEXT_DOMAIN); ?></th>
+                    <th><?php esc_html_e("Shortcode", ICSD_TEXT_DOMAIN); ?></th>
+                    <th><?php esc_html_e("ICS Name", ICSD_TEXT_DOMAIN); ?></th>
                     <th></th>
-                    <th><?php echo __("ICS URL", ICSD_TEXT_DOMAIN); ?></th>
+                    <th><?php esc_html_e("ICS URL", ICSD_TEXT_DOMAIN); ?></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
             <?php if (isset($icsd_url) && is_array($icsd_url)) { foreach($icsd_url AS $ik => $iv) { ?>
             <tr <?php if (!(isset($icsd_setup[$ik]['checked'])) || isset($icsd_setup[$ik]['checked']) && intval($icsd_setup[$ik]['checked'])<(time()-86400*7)) { echo 'class="warning"'; } ?>>
-                <td style="white-space: nowrap;"><?php echo '[icsd id="'.($ik+1).'"]'; ?></td>
-                <td style="white-space: nowrap;"><?php echo (isset($icsd_setup[$ik]['name'])?$icsd_setup[$ik]['name']:''); ?></td>
+                <td style="white-space: nowrap;">[icsd id="<?php echo intval($ik+1); ?>"]</td>
+                <td style="white-space: nowrap;"><?php esc_html_e(isset($icsd_setup[$ik]['name'])?$icsd_setup[$ik]['name']:''); ?></td>
                 <td><?php echo (isset($icsd_setup[$ik]['display'])?$icsd_display_icon[($icsd_setup[$ik]['display'])]:'<span class="dashicons dashicons-editor-table"></span>'); ?></td>
-                <td><?php echo implode('<wbr>', str_split($icsd_url[$ik], 7)); ?></td>
-                <td style="white-space: nowrap;"><span class="dashicons dashicons-edit tabtarget" rel="#tabs-<?php echo ($ik+2); ?>"></span> <span class="dashicons dashicons-trash" onclick="icsd_remove('<?php echo ((isset($icsd_setup[$ik]['name']) && trim($icsd_setup[$ik]['name'])!='')?$icsd_setup[$ik]['name']:$icsd_url[$ik]); ?>', <?php echo ($ik+1); ?>)"></span></td>
+                <td><?php echo implode('<wbr>', str_split(esc_url($icsd_url[$ik]), 7)); ?></td>
+                <td style="white-space: nowrap;"><span class="dashicons dashicons-edit tabtarget" rel="#tabs-<?php echo intval($ik+2); ?>"></span> <span class="dashicons dashicons-trash" onclick="icsd_remove('<?php echo ((isset($icsd_setup[$ik]['name']) && trim($icsd_setup[$ik]['name'])!='')?esc_js($icsd_setup[$ik]['name']):esc_url($icsd_url[$ik])); ?>', <?php echo intval($ik+1); ?>)"></span></td>
             </tr>
             <?php } } ?>
             </tbody>
         </table>
         <?php } ?>
-        <h2><?php echo __("Add URL", ICSD_TEXT_DOMAIN); ?></h2>
-        <p><?php echo __("Add a new URL to an ICS-File. You can change the properties after adding the URL.", ICSD_TEXT_DOMAIN); ?></p>
+        <h2><?php esc_html_e("Add URL", ICSD_TEXT_DOMAIN); ?></h2>
+        <p><?php esc_html_e("Add a new URL to an ICS-File. You can change the properties after adding the URL.", ICSD_TEXT_DOMAIN); ?></p>
         <p><input type="text" name="icsd_url_new" style="width: 50%" /></p>
-        <p><input type="submit" class="button button-primary" value="<?php echo __("Add", ICSD_TEXT_DOMAIN); ?>"></p>
+        <p><input type="submit" class="button button-primary" value="<?php esc_attr_e("Add", ICSD_TEXT_DOMAIN); ?>"></p>
     </div>
 </form>
 <form action="" method="post">
@@ -78,35 +78,35 @@
     $icsd_dataset_default_tmp = $icsd_dataset_default;
 
     ?>
-    <div class="tabcontent" id="tabs-<?php echo ($ik+2); ?>">
-        <input type="hidden" name="icsd_setup[<?php echo $ik; ?>][url]" value="<?php echo $iv; ?>" />
-        <?php echo $icsd_setup[$ik]['display']; ?>
-        <p><input type="text" readonly="readonly" name="icsd_setup[<?php echo $ik; ?>][nurl]" value="<?php echo $iv; ?>" style="width: 50%" /></p>
-        <p><?php echo __("Name", ICSD_TEXT_DOMAIN); ?></p>
-        <p><input type="text" name="icsd_setup[<?php echo $ik; ?>][name]" value="<?php echo $icsd_setup[$ik]['name']; ?>" style="width: 50%" /></p>
-        <p><?php echo __("Content display type", ICSD_TEXT_DOMAIN); ?></p>
-        <p><select name="icsd_setup[<?php echo $ik; ?>][display]" onchange="setupPage(this.value,<?php echo $ik; ?>)">
-            <option value="table" <?php echo ($icsd_setup[$ik]['display']=='table')?'selected="selected"':''; ?>><?php echo __("Table view", ICSD_TEXT_DOMAIN); ?></option>
-            <option value="list" <?php echo ($icsd_setup[$ik]['display']=='list' && defined('ICSD_PRO') && ICSD_PRO===true)?'selected="selected"':''; ?> <?php echo (!(defined('ICSD_PRO')) || (defined('ICSD_PRO') && ICSD_PRO===false))?'disabled="disabled"':''; ?>><?php echo __("List view".ICSD_PRO_INFO, ICSD_TEXT_DOMAIN); ?></option>
-            <option value="calendar" <?php echo ($icsd_setup[$ik]['display']=='calendar' && defined('ICSD_PRO') && ICSD_PRO===true)?'selected="selected"':''; ?> <?php echo (!(defined('ICSD_PRO')) || (defined('ICSD_PRO') && ICSD_PRO===false))?'disabled="disabled"':''; ?>><?php echo __("Calendar view".ICSD_PRO_INFO, ICSD_TEXT_DOMAIN); ?></option>
+    <div class="tabcontent" id="tabs-<?php echo intval($ik+2); ?>">
+        <input type="hidden" name="icsd_setup[<?php echo intval($ik); ?>][url]" value="<?php echo esc_attr($iv); ?>" />
+        <?php esc_html_e($icsd_setup[$ik]['display']); ?>
+        <p><input type="text" readonly="readonly" name="icsd_setup[<?php echo intval($ik); ?>][nurl]" value="<?php echo esc_attr($iv); ?>" style="width: 50%" /></p>
+        <p><?php esc_html_e("Name", ICSD_TEXT_DOMAIN); ?></p>
+        <p><input type="text" name="icsd_setup[<?php echo intval($ik); ?>][name]" value="<?php echo $icsd_setup[$ik]['name']; ?>" style="width: 50%" /></p>
+        <p><?php esc_html_e("Content display type", ICSD_TEXT_DOMAIN); ?></p>
+        <p><select name="icsd_setup[<?php echo intval($ik); ?>][display]" onchange="setupPage(this.value,<?php echo intval($ik); ?>)">
+            <option value="table" <?php echo ($icsd_setup[$ik]['display']=='table')?'selected="selected"':''; ?>><?php esc_html_e("Table view", ICSD_TEXT_DOMAIN); ?></option>
+            <option value="list" <?php echo ($icsd_setup[$ik]['display']=='list' && defined('ICSD_PRO') && ICSD_PRO===true)?'selected="selected"':''; ?> <?php echo (!(defined('ICSD_PRO')) || (defined('ICSD_PRO') && ICSD_PRO===false))?'disabled="disabled"':''; ?>><?php esc_html_e("List view".ICSD_PRO_INFO, ICSD_TEXT_DOMAIN); ?></option>
+            <option value="calendar" <?php echo ($icsd_setup[$ik]['display']=='calendar' && defined('ICSD_PRO') && ICSD_PRO===true)?'selected="selected"':''; ?> <?php echo (!(defined('ICSD_PRO')) || (defined('ICSD_PRO') && ICSD_PRO===false))?'disabled="disabled"':''; ?>><?php esc_html_e("Calendar view".ICSD_PRO_INFO, ICSD_TEXT_DOMAIN); ?></option>
         </select></p>
 
-        <p class="icsd_setup_page_list_<?php echo $ik; ?>"><?php echo __("Sorting", ICSD_TEXT_DOMAIN); ?></p>
-        <p class="icsd_setup_page_list_<?php echo $ik; ?>"><select name="icsd_setup[<?php echo $ik; ?>][sort]">
-            <option value="asc" <?php echo ($icsd_setup[$ik]['sort']=='asc')?'selected="selected"':''; ?>><?php echo __("Sort ascending", ICSD_TEXT_DOMAIN); ?></option>
-            <option value="desc" <?php echo ($icsd_setup[$ik]['sort']=='desc')?'selected="selected"':''; ?>><?php echo __("Sort descending", ICSD_TEXT_DOMAIN); ?></option>
+        <p class="icsd_setup_page_list_<?php echo intval($ik); ?>"><?php esc_html_e("Sorting", ICSD_TEXT_DOMAIN); ?></p>
+        <p class="icsd_setup_page_list_<?php echo intval($ik); ?>"><select name="icsd_setup[<?php echo intval($ik); ?>][sort]">
+            <option value="asc" <?php echo ($icsd_setup[$ik]['sort']=='asc')?'selected="selected"':''; ?>><?php esc_html_e("Sort ascending", ICSD_TEXT_DOMAIN); ?></option>
+            <option value="desc" <?php echo ($icsd_setup[$ik]['sort']=='desc')?'selected="selected"':''; ?>><?php esc_html_e("Sort descending", ICSD_TEXT_DOMAIN); ?></option>
         </select></p>
-        <p><?php echo __("Use start date <em>(beta)</em>", ICSD_TEXT_DOMAIN); ?></p>
-        <p><input type="date" name="icsd_setup[<?php echo $ik; ?>][startdate]" value="<?php echo $icsd_setup[$ik]['startdate']; ?>" /></p>
-        <p class="icsd_setup_page_calendar_<?php echo $ik; ?>"><em><?php echo __("In calendar view the startdate will be the first day of month your start date is defined for.", ICSD_TEXT_DOMAIN); ?></em></p>
-        <p class="icsd_setup_page_list_<?php echo $ik; ?>"><?php echo __("Use following number of future entries to display (zero shows all, limited by one year from startdate)", ICSD_TEXT_DOMAIN); ?></p>
-        <p class="icsd_setup_page_list_<?php echo $ik; ?>"><input type="number" step="1" min="0" name="icsd_setup[<?php echo $ik; ?>][max]" value="<?php echo intval($icsd_setup[$ik]['max']); ?>" /></p>
-        <p class="icsd_setup_page_list_<?php echo $ik; ?>"><?php echo __("Use following number of repeating entries to display (zero shows all, only limited by number of all entries be displayed)", ICSD_TEXT_DOMAIN); ?></p>
-        <p class="icsd_setup_page_list_<?php echo $ik; ?>"><input type="number" step="1" min="0" name="icsd_setup[<?php echo $ik; ?>][repeats]" value="<?php echo intval($icsd_setup[$ik]['repeats']); ?>" /></p>
-        <p class="icsd_setup_page_list_<?php echo $ik; ?>"><?php echo __("Use following number of entries to display per page (zero shows all)", ICSD_TEXT_DOMAIN); ?></p>
-        <p class="icsd_setup_page_calendar_<?php echo $ik; ?>"><?php echo __("Use following number of calendar pages to display (zero shows three)", ICSD_TEXT_DOMAIN); ?></p>
-        <p><input type="number" step="1" min="0" id="icsd_setup_page_<?php echo $ik; ?>" name="icsd_setup[<?php echo $ik; ?>][page]" value="<?php echo intval($icsd_setup[$ik]['page']); ?>" /></p>
-        <p><?php echo __("Informations to be shown in table and list view or displayed as tooltip in calendar view", ICSD_TEXT_DOMAIN); ?></p>
+        <p><?php esc_html_e("Use start date (beta)", ICSD_TEXT_DOMAIN); ?></p>
+        <p><input type="date" name="icsd_setup[<?php echo intval($ik); ?>][startdate]" value="<?php echo $icsd_setup[$ik]['startdate']; ?>" /></p>
+        <p class="icsd_setup_page_calendar_<?php echo intval($ik); ?>"><em><?php esc_html_e("In calendar view the startdate will be the first day of month your start date is defined for.", ICSD_TEXT_DOMAIN); ?></em></p>
+        <p class="icsd_setup_page_list_<?php echo intval($ik); ?>"><?php esc_html_e("Use following number of future entries to display (zero shows all, limited by one year from startdate)", ICSD_TEXT_DOMAIN); ?></p>
+        <p class="icsd_setup_page_list_<?php echo intval($ik); ?>"><input type="number" step="1" min="0" name="icsd_setup[<?php echo intval($ik); ?>][max]" value="<?php echo intval($icsd_setup[$ik]['max']); ?>" /></p>
+        <p class="icsd_setup_page_list_<?php echo intval($ik); ?>"><?php esc_html_e("Use following number of repeating entries to display (zero shows all, only limited by number of all entries be displayed)", ICSD_TEXT_DOMAIN); ?></p>
+        <p class="icsd_setup_page_list_<?php echo intval($ik); ?>"><input type="number" step="1" min="0" name="icsd_setup[<?php echo intval($ik); ?>][repeats]" value="<?php echo intval($icsd_setup[$ik]['repeats']); ?>" /></p>
+        <p class="icsd_setup_page_list_<?php echo intval($ik); ?>"><?php esc_html_e("Use following number of entries to display per page (zero shows all)", ICSD_TEXT_DOMAIN); ?></p>
+        <p class="icsd_setup_page_calendar_<?php echo intval($ik); ?>"><?php esc_html_e("Use following number of calendar pages to display (zero shows three)", ICSD_TEXT_DOMAIN); ?></p>
+        <p><input type="number" step="1" min="0" id="icsd_setup_page_<?php echo intval($ik); ?>" name="icsd_setup[<?php echo intval($ik); ?>][page]" value="<?php echo intval($icsd_setup[$ik]['page']); ?>" /></p>
+        <p><?php esc_html_e("Informations to be shown in table and list view or displayed as tooltip in calendar view", ICSD_TEXT_DOMAIN); ?></p>
         <ul class="icsd-header-list">
             <?php
             
@@ -132,14 +132,13 @@
         
         jQuery('document').ready(function(){
 
-            setupPage( '<?php echo $icsd_setup[$ik]['display'] ?>' , '<?php echo $ik; ?>' );
+            setupPage( '<?php echo esc_attr($icsd_setup[$ik]['display']); ?>' , '<?php echo intval($ik); ?>' );
 
         });
         
         </script>
-        <p><i><?php echo __("Sort elements by drag and drop and name the header fields by yourself if you won't use our prefered names.", ICSD_TEXT_DOMAIN); ?></i></p>
-        <p><input type="submit" class="button button-primary" value="<?php echo __("Save", ICSD_TEXT_DOMAIN); ?>"> <input type="button" class="button button-danger" value="<?php echo __("Remove", ICSD_TEXT_DOMAIN); ?>" onclick="icsd_remove('<?php echo ((isset($icsd_setup[$ik]['name']) && trim($icsd_setup[$ik]['name'])!='')?$icsd_setup[$ik]['name']:$icsd_url[$ik]); ?>', <?php echo ($ik+1);
- ?>)"></p>
+        <p><i><?php esc_html_e("Sort elements by drag and drop and name the header fields by yourself if you won't use our prefered names.", ICSD_TEXT_DOMAIN); ?></i></p>
+        <p><input type="submit" class="button button-primary" value="<?php esc_attr_e("Save", ICSD_TEXT_DOMAIN); ?>"> <input type="button" class="button button-danger" value="<?php esc_attr_e("Remove", ICSD_TEXT_DOMAIN); ?>" onclick="icsd_remove('<?php echo ((isset($icsd_setup[$ik]['name']) && trim($icsd_setup[$ik]['name'])!='')?esc_js($icsd_setup[$ik]['name']):esc_url($icsd_url[$ik])); ?>', <?php echo intval($ik+1); ?>)"></p>
     </div>
     <?php } } ?>
 </form>
